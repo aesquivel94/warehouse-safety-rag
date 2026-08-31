@@ -1,0 +1,6 @@
+streamlit
+langchain-community
+langchain-chroma
+chromadb
+fastembed
+google-genai
