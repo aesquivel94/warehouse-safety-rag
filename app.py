@@ -10,7 +10,7 @@ from google import genai
 # ==============================================================================
 PAGE_TITLE = "Warehouse Safety & OSHA Assistant"
 PAGE_ICON = "🛡️"
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-1.5-flash"
 
 CHUNK_SIZE = 300
 CHUNK_OVERLAP = 50
