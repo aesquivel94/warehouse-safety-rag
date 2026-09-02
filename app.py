@@ -90,7 +90,12 @@ def main():
     st.title(f"{PAGE_ICON} {PAGE_TITLE}")
     st.caption("Grounded RAG Assistant for Equipment, Chemical Hazards, and OSHA Logs.")
 
-    api_key = os.environ.get("GEMINI_API_KEY")
+    # Look for the API key in Streamlit Secrets (Cloud) or os.environ (Local/Colab)
+    api_key = st.secrets.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
+
+    if api_key:
+        os.environ["GEMINI_API_KEY"] = api_key
+    
     vector_store = initialize_vector_store()
 
     # Initialize Session State Key for the Text Input
